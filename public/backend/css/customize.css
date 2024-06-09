@@ -8,3 +8,58 @@
 input::placeholder{
     font-size: 13px;
 }
+
+.mb20{
+    margin-bottom: 20px;
+}
+
+.mt20{
+    margin-top: 20px;
+}
+
+h5{
+ text-transform: uppercase;
+ font-weight: normal;
+}
+
+ table .image{
+    height:90px;
+    display: block;
+ }
+.img-cover img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+table strong{
+    min-width: 80px;
+    display: inline-block;
+}
+
+.table > thead > tr >th,
+.table > thead > tr >th,
+.table > thead > tr >th,
+.table > thead > tr >th, 
+.table > tbody > tr >td, 
+.table > tfoot > tr > td{
+    vertical-align: middle;
+}
+
+.uk-flex-space-between{
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.uk-flex-space-between{
+    -ms-flex-pack: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.uk-flex{
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}

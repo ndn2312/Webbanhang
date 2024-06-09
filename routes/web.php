@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Middleware\AuthenticateMiddleware;
 use App\Http\Middleware\LoginMiddleware;
+use App\Http\Controllers\Backend\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +27,13 @@ Route::get('/', function () {
 /*Backend routes*/
 
 Route::get('dashboard/index', [DashboardController::class, 'index'])->name
-('dashboard.index')->middleware(AuthenticateMiddleware::class);
+('dashboard.index')->middleware('admin');
+
+// USER
+Route::get('user/index', [UserController::class, 'index'])->name
+('user.index')->middleware('admin');
 
 Route::get('admin', [AuthController::class, 'index'])->name('auth.admin')
-->middleware(LoginMiddleware::class);
+->middleware('login');
 Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
