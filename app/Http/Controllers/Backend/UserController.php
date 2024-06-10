@@ -13,6 +13,7 @@ class UserController extends Controller
 
     protected $userService;
     protected $provinceRepository;
+    
     public function __construct(
         UserService $userService,
         ProvinceService  $provinceRepository,
@@ -24,7 +25,9 @@ class UserController extends Controller
     
         public function index(){
 
-            $users = [
+            $users = $this->userService->paginate();
+
+            $config = [
                 'js' =>[
                     'backend/js/plugins/switchery/switchery.js'
                 ],
@@ -33,8 +36,8 @@ class UserController extends Controller
                 ]
             ];
             $config['seo'] = config('apps.user');
-            $config= $this ->config();
-            $config['seo'] = config('apps.user');
+            // $config= $this ->config();
+            // $config['seo'] = config('apps.user');
             $template = 'backend.user.index';
             return view('backend.dashboard.layout', compact(
                 'template',
