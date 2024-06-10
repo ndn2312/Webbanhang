@@ -170,7 +170,7 @@
                                     <label for="" class="control-label text-left">
                                         Quận/Huyện
                                     </label>
-                                    <select name="district_id" class="form-control">
+                                    <select name="district_id" class="form-control districts setupSelect2">
                                         <option value="0">
                                             [Chọn Quận/Huyện]
                                         </option>
